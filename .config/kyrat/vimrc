@@ -1,0 +1,80 @@
+syntax enable                           " Enables syntax highlighing
+set autoread                            " Automatically re-read file if a change was detected outside of vim
+set hidden  " allow buffer switching without saving
+"set nowrap                             " Display long lines as just one line
+set wrap                                
+set encoding=utf-8                      " The encoding displayed
+set pumheight=10                        " Makes popup menu smaller
+set fileencoding=utf-8                  " The encoding written to file
+set ruler              			        " Show the cursor position all the time
+"set cmdheight=1                         " More space for displaying messages
+set iskeyword+=-                      	" treat dash separated words as a word text object"
+set mouse=a                             " Enable your mouse
+set splitbelow                          " Horizontal splits will automatically be below
+set splitright                          " Vertical splits will automatically be to the right
+set t_Co=256                            " Support 256 colors
+set conceallevel=0                      " So that I can see `` in markdown files
+set tabstop=4                           " Insert 4 spaces for a tab
+set shiftwidth=2                        " Change the number of space characters inserted for indentation
+set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
+set expandtab                           " Converts tabs to spaces
+set smartindent                         " Makes indenting smart
+set autoindent                          " Good auto indent
+"set laststatus=1                        " Always display the status line. Disabled, I'm using lightline
+"set number                              " Line numbers
+set nonumber                              " Line numbers
+set cursorline                          " Enable highlighting of the current line
+set background=dark                     " tell vim what the background color looks like
+set showtabline=2                       " Always show tabs
+set noshowmode                          " We don't need to see things like -- INSERT -- anymore
+set nobackup                            " This is recommended by coc
+set nowritebackup                       " This is recommended by coc
+set updatetime=300                      " Faster completion
+set timeoutlen=500                      " By default timeoutlen is 1000 ms
+"set formatoptions-=cro                  " Stop newline continution of comments
+"set autochdir                          " Your working directory will always be the same as your working directory. NOT ACTIVATE, by issue with fzf and ctrlp searches
+set foldmethod=marker
+set foldmarker={{{,}}}
+
+let mapleader=","
+" Escape on kj keybinding (ESC is so far)
+" I hate escape more than anything else
+inoremap jk <Esc>
+inoremap kj <Esc>
+
+" Allows you to save files you opened without write permissions via sudo
+cmap w!! w !sudo tee %
+
+" Clear the highlighting of :set hlsearch.
+nnoremap <Leader><Space> :noh<CR>
+
+map <leader>S :%s///<left><left>
+
+nnoremap <Leader>w :w<CR>
+nnoremap <silent> <C-w> :w<CR>
+"nnoremap <Leader>q :q<CR>
+nnoremap <Leader>q ZZ<CR>
+" Closing active buffer
+nnoremap <C-q> :Bdelete<CR>
+" Allow using the repeat operator with a visual selection (!)
+" http://stackoverflow.com/a/8064607/127816
+vnoremap . :normal .<CR>
+
+" faster scrolling
+nnoremap <silent> <C-e> 10<C-e>
+nnoremap <silent> <C-y> 10<C-y>
+
+" Relative numbering
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set nornu
+    set number
+  else
+    set rnu
+  endif
+endfunc
+
+" Toggle between normal and relative numbering.
+nnoremap <leader>r :call NumberToggle()<cr>
+nnoremap <leader>e :set nonumber<cr>
+

@@ -1,0 +1,267 @@
+#     _    _                 _ _____ _______   __
+#    / \  | | __ _  ___ _ __(_)_   _|_   _\ \ / /
+#   / _ \ | |/ _` |/ __| '__| | | |   | |  \ V /
+#  / ___ \| | (_| | (__| |  | | | |   | |   | |
+# /_/   \_\_|\__,_|\___|_|  |_| |_|   |_|   |_|
+# (LINUX)
+# See this wiki page for more info:
+
+import:
+  - ~/Git/dotfiles/.config/alacritty/colors/github_dark.yaml
+  # - ~/Git/dotfiles/.config/alacritty/colors/everforest.yaml
+
+# shell:
+#   program: /bin/zsh
+#   args:
+#     - -l
+#     - -c
+#     - "tmux new-session -A -s main"
+# Font configurations
+font:
+  normal:
+    # Powerlevel10k or p10k recommended using Meslo Nerd Font
+    # family: "MesloLGS NF"
+    # family: JetBrainsMono Nerd Font
+    # family: DaddyTimeMono NF
+    family: Iosevka Nerd Font Mono
+    # family: Code New Roman Nerd Font
+    style: Regular
+  bold:
+    # family: "MesloLGS NF"
+    # family: JetBrainsMono Nerd Font
+    # family: DaddyTimeMono NF
+    family: Iosevka Nerd Font Mono
+    # style: Bold
+    style: Regular
+  italic:
+    # family: "MesloLGS NF"
+    # family: JetBrainsMono Nerd Font
+    # family: DaddyTimeMono NF
+    family: Iosevka Nerd Font Mono
+    style: "Light Italic"
+    # style: Italic
+  size: 13
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+  scale_with_dpi: true
+  use_thin_strokes: false
+
+draw_bold_text_with_bright_colors: true
+
+## Set environment variables
+env:
+  TERM: alacritty
+  WINIT_X11_SCALE_FACTOR: '1.0'
+
+# Use custom cursor colors. If true, display the cursor in the cursor.foreground
+# and cursor.background colors, otherwise invert the colors of the cursor.
+custom_cursor_colors: true
+
+## Terminal window settings
+window:
+  # Window dimensions (changes require restart)
+  #
+  # Number of lines/columns (not pixels) in the terminal. The number of columns
+  # must be at least `2`, while using a value of `0` for columns and lines will
+  # fall back to the window manager's recommended size.
+  #dimensions:
+  #  columns: 0
+  #  lines: 0
+  # Window position (changes require restart)
+  #
+  # Specified in number of pixels.
+  # If the position is not set, the window manager will handle the placement.
+  #position:
+  #  x: 0
+  #  y: 0
+  # Window padding (changes require restart)
+  #
+  # Blank space added around the window in pixels. This padding is scaled
+  # by DPI and the specified value is always added at both opposing sides.
+  padding:
+    x: 5
+    y: 5
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: false
+
+  # Window decorations
+  #
+  # Values for `decorations`:
+  #     - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  #
+  # Values for `decorations` (macOS only):
+  #     - transparent: Title bar, transparent background and title bar buttons
+  #     - buttonless: Title bar, transparent background and no title bar buttons
+  decorations: none
+
+  # Background opacity
+  #
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  opacity: 1.0
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  startup_mode: Windowed
+
+  # Window title
+  title: Alacritty
+
+  # Allow terminal applications to change Alacritty's window title.
+  #dynamic_title: true
+  # Window class (Linux/BSD only):
+  class:
+    # Application instance name
+    instance: Alacritty
+    # General application class
+    general: Alacritty
+
+  # GTK theme variant (Linux/BSD only)
+  #
+  # Override the variant of the GTK theme. Commonly supported values are `dark`
+  # and `light`. Set this to `None` to use the default theme variant.
+  gtk_theme_variant: dark
+  #scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  #history: 10000
+  # Scrolling distance multiplier.
+  #multiplier: 3
+
+## Cursor
+cursor:
+  style:
+    shape: Block
+    blinking: On
+
+  unfocused_hollow: false
+
+## Live config reload
+live_config_reload: true
+
+
+key_bindings:
+  # Alacritty
+  - { key: N, mods: Alt, action: SpawnNewInstance } # Spawn new instance
+  - { key: Key0, mods: Alt, action: ResetFontSize } # Reset font size
+  - { key: Plus, mods: Alt, action: IncreaseFontSize } # Increase font size
+  - { key: Minus, mods: Alt, action: DecreaseFontSize } # Decrease font size
+  # using Mac's 'command' to control your tmux.
+  - { key: Comma, mods: Alt, chars: "\ao" } # Move to next pane
+  - { key: J, mods: Alt, chars: "\a(" } # Move to next session
+  - { key: K, mods: Alt, chars: "\a)" } # Move to previous session
+  - { key: T, mods: Alt, chars: "\ac" } # Create window
+  - { key: H, mods: Alt, chars: "\ap" } # Move to previous window
+  - { key: Y, mods: Alt, chars: "\al" } # Toggle to previous window
+  - { key: G, mods: Alt, chars: "\a[" } # Enter to copy mode
+  - { key: L, mods: Alt, chars: "\an" } # Move to next window
+  - { key: X, mods: Alt, chars: "\ax" } # Kill pane/window
+  - { key: A, mods: Alt, chars: "\a|" } # Split pane vertically
+  - { key: S, mods: Alt, chars: "\a\"" } # Split pane horizontally
+  - { key: R, mods: Alt, chars: "\aw" } # List windows
+  - { key: Z, mods: Alt, chars: "\az" } # Maximize pane
+  ## General key bindings
+  #  - {
+  #key: Comma,
+  #mods: Alt,
+  #command: { program: "sh", args: ["-c", "open ~/.config/alacritty/"] },
+  #} # Open alacritty config directory
+  - { key: Back, mods: Alt, chars: "\x15" } # delete word/line
+  - { key: Right, mods: Alt, chars: "\x1bf" } # One word left
+  - { key: Left, mods: Alt, chars: "\x1bb" } # One word right
+
+# Visual Bell
+#
+# Any time the BEL code is received, Alacritty "rings" the visual bell. Once
+# rung, the terminal background will be set to white and transition back to the
+# default background color. You can control the rate of this transition by
+# setting the `duration` property (represented in milliseconds). You can also
+# configure the transition function by setting the `animation` property.
+#
+# Possible values for `animation`
+# `Ease`
+# `EaseOut`
+# `EaseOutSine`
+# `EaseOutQuad`
+# `EaseOutCubic`
+# `EaseOutQuart`
+# `EaseOutQuint`
+# `EaseOutExpo`
+# `EaseOutCirc`
+# `Linear`
+#
+# To completely disable the visual bell, set its duration to 0.
+#
+bell:
+  animation: EaseOutExpo
+  color: '0xffffff'
+  duration: 0
+
+
+mouse:
+  # Click settings
+  #
+  # The `double_click` and `triple_click` settings control the time
+  # alacritty should wait for accepting multiple clicks as one double
+  # or triple click.
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+  # If this is `true`, the cursor is temporarily hidden when typing.
+  hide_when_typing: true
+
+  # URL launcher
+  # url:
+    # This program is executed when clicking on a text which is recognized as a URL.
+    # The URL is always added to the command as the last parameter.
+    #
+    # When set to `None`, URL launching will be disabled completely.
+    #
+    # Default:
+    #   - (macOS) open
+    #   - (Linux) xdg-open
+    #   - (Windows) explorer
+    # launcher:
+    #   program: xdg-open
+    #   args: []
+
+    # These are the modifiers that need to be held down for opening URLs when clicking
+    # on them. The available modifiers are documented in the key binding section.
+    # modifiers: Control|Shift
+
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: false
+
+# Mouse bindings
+#
+# Available fields:
+# - mouse
+# - action
+# - mods (optional)
+#
+# Values for `mouse`:
+# - Middle
+# - Left
+# - Right
+# - Numeric identifier such as `5`
+#
+# All available `mods` and `action` values are documented in the key binding
+# section.
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }

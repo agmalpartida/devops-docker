@@ -1,0 +1,23 @@
+session_name: tf
+windows:
+  - layout: b842,159x42,0,0,5
+    options: {}
+    panes:
+      - focus: "true"
+        shell_command: cd my-docs && git pull && ranger # for to enter on python virtual environment
+    start_directory: /Users/alberto/Git/
+    window_name: my-docs
+  - layout: b843,159x42,0,0,6
+    options: {}
+    panes:
+      - focus: "true"
+        shell_command: pwd && git pull
+    start_directory: /Users/alberto/Git/job/terraform-modules
+    window_name: tf-modules
+  - layout: b844,159x42,0,0,7
+    options: {}
+    panes:
+      - focus: "true"
+        shell_command: pwd && git pull
+    start_directory: /Users/alberto/Git/job/terraform-live/modules/
+    window_name: tf-live

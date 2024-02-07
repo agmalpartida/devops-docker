@@ -23,12 +23,14 @@ WORKDIR /home/agmalpartida
 
 USER agmalpartida
 
-COPY --chown=agmalpartida:agmalpartida . dotfiles/
+#COPY --chown=agmalpartida:agmalpartida . dotfiles/
+COPY --chown=agmalpartida:agmalpartida . /home/agmalpartida
 
-ENV ANSIBLE_CONFIG=/home/agmalpartida/dotfiles/ansible/ansible.cfg \
+ENV ANSIBLE_CONFIG=/home/agmalpartida/ansible/ansible.cfg \
     ANSIBLE_INVENTORY_WARNING=false
 
-RUN ansible-galaxy install -r dotfiles/ansible/requirements.yml -f
-RUN ansible-playbook dotfiles/ansible/base.yaml
+#RUN ansible-galaxy install -r dotfiles/ansible/requirements.yml -f
+#RUN ansible-playbook dotfiles/ansible/base.yaml
+RUN ansible-playbook ansible/base.yaml
 
 ENTRYPOINT ["/usr/bin/zsh"]

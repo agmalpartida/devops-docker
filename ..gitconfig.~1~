@@ -1,0 +1,88 @@
+[include]
+    # [!] DO NOT store sensitive information such as the Git user
+    # credentials (`name` / `email`), or things such as the `signingkey`
+    # in this file, add them in `~/.gitconfig-personal`!
+    path = ~/.gitconfig-personal
+[core]
+    pager = delta
+    excludesfile = /home/agmalpartida/.config/git/gitignore_global
+    editor = nvim
+[credential]
+    helper = cache
+[difftool "nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd L\"
+[merge]
+	tool = nvimdiff4
+	prompt = false
+[mergetool "nvimdiff4"]
+	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[commit]
+	template = /home/agmalpartida/.config/git/commit_template
+	verbose = true
+	gpgSign = false
+[pull]
+	rebase = false
+[gpg]
+	program = /opt/homebrew/bin/gpg
+[tag]
+	gpgSign = true
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	features = side-by-side line-numbers decorations
+	navigate = true
+	whitespace-error-style = 22 reverse
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
+[interactive]
+	diffFilter = delta --color-only
+[mergetool]
+	keepBackup = false
+[push]
+	autoSetupRemote = true
+    default = simple
+    # "push the current branch back to the branch whose changes are usually integrated into the current branch"
+    # "refuse to push if the upstream branch’s name is different from the local one"
+    # https://git-scm.com/docs/git-config#git-config-pushdefault
+
+    followTags = true
+    # Because I get sick of telling git to do it manually
+    # https://git-scm.com/docs/git-config#git-config-pushfollowTags
+[init]
+	defaultBranch = main
+[status]
+  showUntrackedFiles = all
+  # Sometimes a newly-added folder, since it's only one line in git status, can slip under the radar.
+  # https://git-scm.com/docs/git-config#git-config-statusshowUntrackedFiles
+
+[transfer]
+  fsckobjects = true
+  # To combat repository corruption!
+  # Note: this global option applies during receive and transmit
+  # https://git-scm.com/docs/git-config#git-config-transferfsckObjects
+  # via https://groups.google.com/forum/#!topic/binary-transparency/f-BI4o8HZW0
+
+[alias]
+    s = status
+    co = checkout
+    p = pull
+    pu = push
+    cl = clone
+    # Create a new branch and switch to it
+    cob = checkout -b
+    # Delete a branch
+    del = branch -D
+    # List all branches
+    br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+    # Show all branch order by last commit
+    brc = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+    # Commit
+    save = !git add -A && git commit -m 'chore: commit save point'
+    # Rollback changes
+    undo = reset HEAD~1 --mixed
+    # Clean all changes (a quick clean up of all of your local changes)
+    res = !git reset --hard
+    # Log
+    lg = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30

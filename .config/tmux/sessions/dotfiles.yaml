@@ -1,0 +1,31 @@
+session_name: dotfiles
+windows:
+  - focus: 'true'
+    layout: b83e,159x42,0,0,1
+    options: {}
+    panes:
+      - focus: 'true'
+        shell_command: pwd && git pull
+    start_directory: /Users/alberto/Git/dotfiles
+    window_name: Dots
+  - layout: b83f,159x42,0,0,2
+    options: {}
+    panes:
+      - focus: 'true'
+        shell_command: pwd && git pull
+    start_directory: /Users/alberto/Git/laptop-dev-ansible
+    window_name: Laptop
+  - layout: b840,159x42,0,0,3
+    options: {}
+    panes:
+      - focus: 'true'
+        shell_command: pwd && git pull
+    start_directory: /Users/alberto/Git/idevim
+    window_name: Nvim
+  - layout: b841,159x42,0,0,4
+    options: {}
+    panes:
+      - focus: 'true'
+        shell_command: "source /Users/alberto/Git/my-docs/.venv/bin/activate && mkdocs serve --config-file /Users/alberto/Git/my-docs/mkdocs.yml"
+    start_directory: /Users/alberto/Git/my-docs/
+    window_name: my-docs

@@ -27,7 +27,7 @@
     - github
     - pip
     - cmd
-    - agmalpartida.dotfiles
+    #- agmalpartida.dotfiles
   tasks:
     - include_tasks: tasks/locales.yml
     - include_tasks: tasks/kyrat.yml

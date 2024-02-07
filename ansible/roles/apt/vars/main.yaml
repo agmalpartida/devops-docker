@@ -18,4 +18,3 @@ apt_packages:
   - keychain
   - lolcat # for tmux reload
   - lf
-  - lazygit

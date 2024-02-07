@@ -1,0 +1,16 @@
+session_name: main
+windows:
+- window_name: docs
+  options:
+    automatic-rename: off
+  panes:
+  - focus: 'true'
+    shell_command: ranger
+  start_directory: $HOME/Git/my-docs/
+- window_name: test
+  options:
+    automatic-rename: off
+  panes:
+  - focus: 'true'
+    shell_command: pwd
+  start_directory: $HOME

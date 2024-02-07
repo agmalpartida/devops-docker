@@ -1,0 +1,12 @@
+session_name: k8s
+windows:
+- window_name: overview
+  layout: main-vertical
+  shell_command_before:
+  - cd ~/
+  panes:
+  - shell_command:
+    - klogs
+  - watch -n 10 kubectl view-utilization -h
+  - watch -n 10 kubectl view-utilization namespaces -h
+  - watch -n 10 kubectl view-utilization nodes -h
