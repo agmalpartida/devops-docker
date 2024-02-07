@@ -1,4 +1,5 @@
 apt_packages:
+  - alacritty
   - build-essential
   - git
   - curl
@@ -17,3 +18,4 @@ apt_packages:
   - keychain
   - lolcat # for tmux reload
   - lf
+  - lazygit
