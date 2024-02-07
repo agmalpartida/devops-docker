@@ -9,7 +9,7 @@
         - '{{ playbook_dir }}/group_vars/default.yml'
   roles:
     - apt
-    #- github
+    - github
     - pip
     - cmd
     - agmalpartida.dotfiles
