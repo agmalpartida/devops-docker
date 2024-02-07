@@ -5,12 +5,12 @@ github_package_repos:
     extra_opts: ""
     replace_version: false
     split: false
-  # - name: zellij-org/zellij
-  #   url: https://github.com/zellij-org/zellij/releases/download/[VERSION]/zellij-x86_64-unknown-linux-musl.tar.gz
-  #   destination: /usr/local/bin
-  #   extra_opts: ""
-  #   replace_version: false
-  #   split: false
+  - name: zellij-org/zellij
+    url: https://github.com/zellij-org/zellij/releases/download/[VERSION]/zellij-x86_64-unknown-linux-musl.tar.gz
+    destination: /usr/local/bin
+    extra_opts: ""
+    replace_version: false
+    split: false
   - name: eza-community/eza
     url: https://github.com/eza-community/eza/releases/download/[VERSION]/eza_x86_64-unknown-linux-gnu.tar.gz
     destination: /usr/local/bin
@@ -35,12 +35,12 @@ github_package_repos:
     extra_opts: "-qq"
     replace_version: true
     split: false
-  # - name: dalance/procs
-  #   url: https://github.com/dalance/procs/releases/download/[VERSION]/procs-[VERSION]-x86_64-linux.zip
-  #   destination: /usr/local/bin
-  #   extra_opts: "-qq"
-  #   replace_version: false
-  #   split: false
+  - name: dalance/procs
+    url: https://github.com/dalance/procs/releases/download/[VERSION]/procs-[VERSION]-x86_64-linux.zip
+    destination: /usr/local/bin
+    extra_opts: "-qq"
+    replace_version: false
+    split: false
   - name: sharkdp/bat
     url: https://github.com/sharkdp/bat/releases/download/[VERSION]/bat-[VERSION]-x86_64-unknown-linux-gnu.tar.gz
     destination: /usr/local/bin
