@@ -38,6 +38,10 @@ dotfiles_files:
   - .config/pip
   - .config/tmux
   - .config/lf
+  - .config/lazygit
+  - .config/kyrat
+  - .config/git
+  - .config/alacritty
 installed_apps:
   # - alacritty
   # - bash
