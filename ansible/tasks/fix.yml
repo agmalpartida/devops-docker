@@ -1,0 +1,3 @@
+- name: Configuring user shell (permissions)
+  ansible.builtin.command: "compaudit | xargs chmod g-w"
+  become: true

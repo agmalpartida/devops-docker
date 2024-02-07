@@ -1,0 +1,164 @@
+cores: 12
+user: agmalpartida
+shell: /usr/bin/zsh
+user_home: /home/agmalpartida
+hostname: raccoon
+install_nerd_fonts: true
+#secrets_repo: ssh://git@192.168.1.54:/home/git/secrets-git
+secrets_repo: https://github.com/agmalpartida/dotfiles-public.git
+secrets_repo_version: main
+secrets_repo_accept_hostkey: false
+secrets_repo_local_destination: ~/Git/secrets-git
+secrets_home: '~'
+secrets_files:
+  - .alacritty.yml
+# secrets_files:
+#   - .ssh
+#   - .aws
+#   - .kube
+# firefox
+# firefox_profile: 3f8ftcij.default-release-1645085629061
+# firefox_theme: waterfall
+# firefox_startpage: simple
+dotfiles_repo: https://github.com/agmalpartida/dotfiles-public.git
+dotfiles_repo_version: main
+dotfiles_repo_accept_hostkey: false
+dotfiles_repo_local_destination: ~/Git/dotfiles
+dotfiles_files:
+  - .alacritty.yml
+  # - .colors
+  - .zshrc
+  # - .gitconfig
+  # - .gitignore_global
+  # - .gitmessage
+  # - .p10k.zsh
+  # - .tmux.conf
+  # - .sshrc
+  # - .sshrc.d
+  # - .mpd/mpd.conf
+  # - .mpd/playlists
+  # - .mpv.conf
+  # - .ncmpcpp
+  # - .scripts
+  # - .config/bspwm
+  # - .config/betterlockscreen
+  # - .config/firefox
+  # - .config/i3
+  # - .config/i3-layout-manager
+  # - .config/dunst
+  # - .config/htop
+  # - .config/picom
+  # - .config/polybar
+  # - .config/rofi
+  # - .config/cava
+  # - .config/conky
+  # - .config/nvim
+  # - .config/neofetch
+  # - .config/pulse/default.pa
+  # - .config/ranger
+  #- .config/Thunar
+  #- .config/zathura
+  # - .config/starship
+  # - .config/yamllint
+  # - .config/sxhkd
+  #- .fonts
+  # - .xinitrc
+  # - .Xmodmap
+  # - .Xresources
+  # - .Xresources.d
+installed_apps:
+  # - alacritty
+  # - bash
+  # - base-devel
+  # - bat
+  # - bash-language-server
+  # - borg   # deduplicated backup
+  # - bind-tools
+  # - brightnessctl
+  - bspwm
+  - curl
+  # - cronie
+  # - ctags
+  - dmenu
+  # - dhcpcd
+  # - docker-compose
+  # - dmidecode
+  - dunst # Notificador
+  # - diff-so-fancy   # customización de git
+  - feh # visor de imagenes
+  - file-roller
+  # - firefox
+  - figlet
+  - fzf
+  - ffmpeg
+  # - ffmpegthumbnailer
+  # - filezilla
+  # - gst-libav
+  - git
+  # - gnupg
+  # - glances   # monitoring
+  # - grep
+  - htop
+  # - i3-gaps   # es un fork mejorado de i3. Cuando se instala, se desintalará i3
+  - jq
+  - keychain
+  # - kubectl
+  # - lxinput   # configuracion raton y teclado
+  # - libinput
+  # - linux-lts
+  # - linux-lts-headers
+  # - linux-firmware
+  # - lsb-release
+  # - lxappearance   # is used for changing GTK theme icons, fonts, and some other preferences.
+  # - light   # control de luminosidad para polybar
+  - lolcat # for tmux reload
+  # - lazygit
+  # - lxrandr
+  - maim # screenshot capture
+  # - man-db
+  # - mdadm
+  - mlocate # search files from command line (updatedb)
+  - mpd
+  - ncmpcpp
+  - neovim
+  # - nextcloud-client
+  # - numlockx   # activar teclado numerico
+  # - nm-connection-editor
+  - neofetch
+  - pulseaudio
+  - pulsemixer
+  - pavucontrol # control audio
+  # - pass
+  # - powerline-fonts
+  # - pulseaudio-bluetooth
+  - playerctl
+  - picom # transparencias en ventanas
+  # - pulsemixer   # audio desde la Terminal
+  # - pyenv    # python environments
+  - ranger # file manager
+  - redshift
+  - ripgrep
+  - rofi # lanzador de apps, mejor que dmenu, con $mod+tab muestra las apps abiertas
+  # - starship
+  # - sxhkd
+  # - scrot   # capturas de pantalla
+  # - screenfetch
+  # - sddm   # simple desktop manager
+  # - sed
+  # - stern   # kubernetes logs
+  - system-config-printer
+  - telegram-desktop
+  # - thunar
+  - tmux
+  - unclutter
+  - viewnior # visor de imagenes
+  - vlc
+  # - wget
+  # - xf86-input-libinput
+  # - xscreensaver
+  # - xsettingsd   # is a simple settings daemon to load fontconfig and some other options. Without this, fonts would look rasterized in some applications.
+  # - xclip   # para que se puede hacer screenshot de imagenes al portapapeles
+  - xdotool
+  # - yaml-language-server     # LSP for neovim
+  - zathura
+  - zsh

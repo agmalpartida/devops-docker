@@ -1,0 +1,12 @@
+- name: Configure Locales
+  become: yes
+  lineinfile:
+    dest: /etc/locale.gen
+    regexp: en_US.UTF-8
+    line: en_US.UTF-8 UTF-8
+- name: Generate Locales
+  become: yes
+  command: locale-gen
+- name: Set the timezone to the Europe/Madrid
+  become: yes
+  timezone: "name=Europe/Madrid"
