@@ -16,3 +16,5 @@ apt_packages:
   - jq
   - keychain
   - lolcat # for tmux reload
+  - lf
+  - eza
