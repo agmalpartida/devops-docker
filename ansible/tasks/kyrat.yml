@@ -1,0 +1,46 @@
+- name: Clone Kyrat Repository
+  become: no
+  git:
+    repo: https://github.com/fsquillace/kyrat
+    dest: '{{ user_home }}/.local/share/kyrat'
+    accept_hostkey: yes
+
+- name: modify permissions and properties of a directory (or create it if it doesn't
+    exist)
+  become: no
+  file:
+    path: '{{ item.dir }}'
+    state: directory
+    mode: 0755
+    access_time: now
+  loop:
+  - dir: '{{ user_home }}/.config/kyrat'
+
+- name: create links to kyrat directories with origin my dotfiles repo
+  become: no
+  file:
+    src: '{{ user_home }}/Git/dotfiles/.config/kyrat/{{ item.link }}'
+    dest: '{{ user_home }}/.config/kyrat/{{ item.link }}'
+    state: link
+  loop:
+  - link: bashrc.d
+  # - link: zshrc.d
+  # - link: tmux.conf.d
+  # - link: vimrc.d
+  # - link: inputrc.d
+
+- name: Create kyrat soft links
+  become: no
+  file:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    state: link
+  loop:
+  - {src: '{{ user_home }}/Git/dotfiles/.config/kyrat/bashrc', dest: '{{ user_home
+      }}/.config/kyrat/bashrc'}
+  - {src: '{{ user_home }}/Git/dotfiles/.config/kyrat/inputrc', dest: '{{ user_home
+      }}/.config/kyrat/inputrc'}
+  - {src: '{{ user_home }}/Git/dotfiles/.config/kyrat/tmux.conf', dest: '{{ user_home
+      }}/.config/kyrat/tmux.conf'}
+  - {src: '{{ user_home }}/Git/dotfiles/.config/kyrat/vimrc', dest: '{{ user_home
+      }}/.config/kyrat/vimrc'}
