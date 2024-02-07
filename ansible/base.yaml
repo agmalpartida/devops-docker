@@ -7,6 +7,21 @@
     - include_vars: '{{ item }}'
       with_fileglob:
         - '{{ playbook_dir }}/group_vars/default.yml'
+    - name: ECS dir should be created
+      become: no
+      file:
+        path: '{{ user_home }}/.ecs'
+        state: directory
+    - name: Kubeconfig files dir should be created
+      become: no
+      file:
+        path: '{{ user_home }}/.kube'
+        state: directory
+    - name: Personal logs dir should be created
+      file:
+        path: '{{ user_home }}/.logs'
+        owner: '{{ user }}'
+        state: directory
   roles:
     - apt
     - github

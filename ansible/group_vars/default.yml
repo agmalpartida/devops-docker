@@ -32,9 +32,12 @@ dotfiles_files:
   - .gitmessage
   - .tmux.conf
   - .scripts
-  # - .config/htop
-  # - .config/nvim
-  # - .config/neofetch
+  - .config/htop
+  - .config/nvim
+  - .config/neofetch
+  - .config/pip
+  - .config/tmux
+  - .config/lf
 installed_apps:
   # - alacritty
   # - bash
