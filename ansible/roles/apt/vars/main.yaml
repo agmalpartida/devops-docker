@@ -11,3 +11,8 @@ apt_packages:
   - stow
   - locales
   - tmux
+  - figlet
+  - htop
+  - jq
+  - keychain
+  - lolcat # for tmux reload

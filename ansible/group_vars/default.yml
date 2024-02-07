@@ -26,46 +26,15 @@ dotfiles_repo_accept_hostkey: false
 dotfiles_repo_local_destination: ~/Git/dotfiles
 dotfiles_files:
   - .alacritty.yml
-  # - .colors
   - .zshrc
-  # - .gitconfig
-  # - .gitignore_global
-  # - .gitmessage
-  # - .p10k.zsh
-  # - .tmux.conf
-  # - .sshrc
-  # - .sshrc.d
-  # - .mpd/mpd.conf
-  # - .mpd/playlists
-  # - .mpv.conf
-  # - .ncmpcpp
-  # - .scripts
-  # - .config/bspwm
-  # - .config/betterlockscreen
-  # - .config/firefox
-  # - .config/i3
-  # - .config/i3-layout-manager
-  # - .config/dunst
+  - .gitconfig
+  - .gitignore_global
+  - .gitmessage
+  - .tmux.conf
+  - .scripts
   # - .config/htop
-  # - .config/picom
-  # - .config/polybar
-  # - .config/rofi
-  # - .config/cava
-  # - .config/conky
   # - .config/nvim
   # - .config/neofetch
-  # - .config/pulse/default.pa
-  # - .config/ranger
-  #- .config/Thunar
-  #- .config/zathura
-  # - .config/starship
-  # - .config/yamllint
-  # - .config/sxhkd
-  #- .fonts
-  # - .xinitrc
-  # - .Xmodmap
-  # - .Xresources
-  # - .Xresources.d
 installed_apps:
   # - alacritty
   # - bash
