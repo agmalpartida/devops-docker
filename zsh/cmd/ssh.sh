@@ -1,8 +1,3 @@
-# Remove --clear because ask password each session
-eval $(keychain -q --agents ssh --eval personal job git-nopass)
-# Kill currently running agent processes
-# $ keychain -k
-
 alias sshconfig='vim $HOME/.ssh/config'
 
 # to do not pass sshrc files

@@ -72,6 +72,7 @@ _extend_path() {
 [[ -d "$HOME/.scripts" ]] && _extend_path "$HOME/.scripts"
 [[ -d "$HOME/.scripts/git" ]] && _extend_path "$HOME/.scripts/git"
 [[ -d "$HOME/.local/bin" ]] && _extend_path "$HOME/.local/bin"
+[[ -d "$HOME/.local/share/kyrat/bin" ]] && _extend_path "$HOME/.local/share/kyrat/bin"
 
 # }}}
 
